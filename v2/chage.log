@@ -1,5 +1,17 @@
 -------------
 18 April 2023
+1:13 AM
+    code.gs
+        - Remove var bill_date_day. 
+        - Remove var submitting_date_day.
+        + fix bill date
+        + fix submitting date
+
+    code gs html code
+        - Remove bill date day
+        - remove submitting date day
+-------------
+18 April 2023
 1:07 AM
 code.gs
     + fix all date function
