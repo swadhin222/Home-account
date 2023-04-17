@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+ integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" 
+crossorigin="anonymous">
+  <?!= include('JavaScript'); ?>
+<style>
+    .pwd{
+        width: 100%;
+        height: 45px;
+        font-size: 20px;
+        border-top: none ;
+        border-right: none;
+        border-left: none;
+        outline: none;
+    }
+    .w-20{
+        width: 20% !important;
+    }
+    .w-80{
+        width: 80% !important;
+    }
+
+</style>
+  </head>
+  
+  <body>
+    <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form id="myForm" onsubmit="handleFormSubmit(this)">
+                        <p class="h4 mb-4 text-center">Contact Details</p>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="first_name">First Name</label>
+                                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="last_name">Last Name</label>
+                                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <p>Gender</p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                                    <label class="form-check-label" for="male">Male</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                                    <label class="form-check-label" for="female">Female</label>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="dateOfBirth">Date of Birth</label>
+                                <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    </form>
+                    <div id="output"></div>
+                </div>
+            </div>      
+        </div>
+
+
+<div class="mt-5"></div>
+<!--Main Contain-->
+
+<!--Item (SL. 01) Start-->
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-4 align-items-center d-flex">SL. 01</div>
+            <div class="col ">
+                <select class="custom-select">
+                    <option selected>Item Name</option>
+                    <option  value="মুখের চেপা">মুখের চেপা</option>
+                    <option  value="চেপা">চেপা</option>
+                    <option  value="চেপা বড়">চেপা বড়</option>
+                    <option  value="চেপা ছোট">চেপা ছোট</option>
+                    <option  value="লাট">লাট</option>
+                    <option  value="algon">algon</option>
+                    <option  value="শুঃ পুটি">শুঃ পুটি</option>
+                    <option  value="চান্দা">চান্দা</option>
+                    <option  value="কাচকী">কাচকী</option>
+                    <option  value="নাইলা">নাইলা</option>
+                    <option  value="ফেওয়া">ফেওয়া</option>
+                    <option  value="চিংড়ী">চিংড়ী</option>
+                    <option  value="ফাইস্য">ফাইস্য</option>
+                </select>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            <div class="row">
+                <div class="col-6">
+                    <label for="wt1">Weight</label><br>
+                    <input class="pwd" id="input1" type="text" placeholder=" Weight" name="wt1" oninput="calculateSum1()">
+                </div>
+                <div class="col-6">
+                    <label for="Pr1 text-center">Price</label><br>
+                    <input class="pwd" id="input2" type="text" placeholder=" Price" name="Pr1" oninput="calculateSum1()">
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-muted font-weight-bold">
+          Total Taka <span id="result1"></span>
+        </div>
+      </div>
+</div>
+<!--Item (SL. 01) End-->
+
+<!--Item (SL. 02) Start-->
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-4 align-items-center d-flex">SL. 02</div>
+            <div class="col">
+                <select class="custom-select">
+                    <option selected>Item Name</option>
+                    <option  value="মুখের চেপা">মুখের চেপা</option>
+                    <option  value="চেপা">চেপা</option>
+                    <option  value="চেপা বড়">চেপা বড়</option>
+                    <option  value="চেপা ছোট">চেপা ছোট</option>
+                    <option  value="লাট">লাট</option>
+                    <option  value="algon">algon</option>
+                    <option  value="শুঃ পুটি">শুঃ পুটি</option>
+                    <option  value="চান্দা">চান্দা</option>
+                    <option  value="কাচকী">কাচকী</option>
+                    <option  value="নাইলা">নাইলা</option>
+                    <option  value="ফেওয়া">ফেওয়া</option>
+                    <option  value="চিংড়ী">চিংড়ী</option>
+                    <option  value="ফাইস্য">ফাইস্য</option>
+                </select>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            <div class="row">
+                <div class="col-6">
+                    <label for="wt1">Weight</label><br>
+                    <input class="pwd" id="input3" type="text" placeholder=" Weight" name="wt2" oninput="calculateSum2()">
+                </div>
+                <div class="col-6">
+                    <label for="Pr1 text-center">Price</label><br>
+                    <input class="pwd" id="input4" type="text" placeholder=" Price" name="Pr2" oninput="calculateSum2()">
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-muted font-weight-bold">
+          Total Taka <span id="result2"></span>
+        </div>
+      </div>
+</div>
+<!--Item (SL. 02) End-->
+
+
+
+<!--Main Contain-->
+</body>
+</html>
+
+
+
+<label>
+    <input type="radio" name="option" value="option1" onclick="hideInput()">
+    Option 1
+  </label>
+  
+  <label>
+    <input type="radio" name="option" value="option2" onclick="hideInput()">
+    Option 2
+  </label>
+  
+  <label>
+    <input type="radio" name="option" value="other" onclick="showInput()">
+    Other
+  </label>
+  
+  <div id="input-container" style="display:none;">
+      <input class="pwd" name="other-option"type="text" placeholder=" Other Name">
+  </div>
+  <script>
+    function showInput() {
+      var inputContainer = document.getElementById("input-container");
+      inputContainer.style.display = "block";
+    }
+  
+    function hideInput() {
+      var inputContainer = document.getElementById("input-container");
+      inputContainer.style.display = "none";
+    }
+  </script>
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="card mt-5">
+    <div class="card-header">
+      <div class="row">
+        <div class="col align-items-center d-flex">SL. 01</div>
+        <div class="col">
+            <select class="custom-select">
+                <option selected>Item Name</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-text">
+        <div class="row">
+            <div class="col-6">
+                <label for="Pr1">Price</label><br>
+                <input class="pwd" id="input1" type="text" placeholder="  Price" name="Pr1" oninput="calculateSum1()">
+            </div>
+            <div class="col-6">
+                <label for="wt1">Weight</label><br>
+                <input class="pwd" id="input2" type="text" placeholder="  Weight" name="wt1" oninput="calculateSum1()">
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-muted font-weight-bold">
+      Total Taka <span id="result1"></span>
+    </div>
+  </div>
+
+
+    <script>
+      function calculateSum1() {
+        const input1 = Number(document.getElementById("input1").value);
+        const input2 = Number(document.getElementById("input2").value);
+        const sum1 = Number(input1) * Number(input2);
+        document.getElementById("result1").textContent = ": " + sum1;
+      }
+      function calculateSum2() {
+        const input3 = Number(document.getElementById("input3").value);
+        const input4 = Number(document.getElementById("input4").value);
+        const sum2 = Number(input3) * Number(input4);
+        document.getElementById("result2").textContent = ": " + sum2;
+      }
+      function calculateSum3() {
+        const input5 = Number(document.getElementById("input5").value);
+        const input6 = Number(document.getElementById("input6").value);
+        const sum3 = Number(input5) * Number(input6);
+        document.getElementById("result3").textContent = ": " + sum3;
+      }
+      function calculateSum4() {
+        const input7 = Number(document.getElementById("input7").value);
+        const input8 = Number(document.getElementById("input8").value);
+        const sum4 = Number(input7) * Number(input8);
+        document.getElementById("result4").textContent = ": " + sum4;
+      }
+      function calculateSum5() {
+        const input9 = Number(document.getElementById("input9").value);
+        const input10 = Number(document.getElementById("input10").value);
+        const sum5 = Number(input9) * Number(input10);
+        document.getElementById("result5").textContent = ": " + sum5;
+      }
+      function calculateSum6() {
+        const input3 = Number(document.getElementById("input3").value);
+        const input4 = Number(document.getElementById("input4").value);
+        const sum6 = Number(input3) * Number(input3);
+        document.getElementById("result6").textContent = ": " + sum6;
+      }
+      function calculateSum7() {
+        const input1 = Number(document.getElementById("input1").value);
+        const input2 = Number(document.getElementById("input2").value);
+        const sum7 = Number(input1) * Number(input2);
+        document.getElementById("result7").textContent = ": " + sum7;
+      }
+      function calculateSum8() {
+        const input3 = Number(document.getElementById("input3").value);
+        const input4 = Number(document.getElementById("input4").value);
+        const sum8 = Number(input3) * Number(input3);
+        document.getElementById("result8").textContent = ": " + sum8;
+      }
+      function calculateSum9() {
+        const input1 = Number(document.getElementById("input1").value);
+        const input2 = Number(document.getElementById("input2").value);
+        const sum9 = Number(input1) * Number(input2);
+        document.getElementById("result9").textContent = ": " + sum9;
+      }
+      function calculateSum10() {
+        const input3 = Number(document.getElementById("input3").value);
+        const input4 = Number(document.getElementById("input4").value);
+        const sum10 = Number(input3) * Number(input3);
+        document.getElementById("result10").textContent = ": " + sum10;
+      }
+      function calculateSum11() {
+        const input1 = Number(document.getElementById("input1").value);
+        const input2 = Number(document.getElementById("input2").value);
+        const sum11 = Number(input1) * Number(input2);
+        document.getElementById("result11").textContent = ": " + sum11;
+      }
+      function calculateSum12() {
+        const input3 = Number(document.getElementById("input3").value);
+        const input4 = Number(document.getElementById("input4").value);
+        const sum12 = Number(input3) * Number(input3);
+        document.getElementById("result12").textContent = ": " + sum12;
+      }
+      function calculateSum13() {
+        const input1 = Number(document.getElementById("input1").value);
+        const input2 = Number(document.getElementById("input2").value);
+        const sum13 = Number(input1) * Number(input2);
+        document.getElementById("result13").textContent = ": " + sum13;
+      }
+      function calculateSum14() {
+        const input3 = Number(document.getElementById("input3").value);
+        const input4 = Number(document.getElementById("input4").value);
+        const sum14 = Number(input3) * Number(input3);
+        document.getElementById("result14").textContent = ": " + sum14;
+      }
+      function calculateSum15() {
+        const input1 = Number(document.getElementById("input1").value);
+        const input2 = Number(document.getElementById("input2").value);
+        const sum15 = Number(input1) * Number(input2);
+        document.getElementById("result15").textContent = ": " + sum15;
+      }
+      function calculateSum16() {
+        const input3 = Number(document.getElementById("input3").value);
+        const input4 = Number(document.getElementById("input4").value);
+        const sum16 = Number(input3) * Number(input3);
+        document.getElementById("result16").textContent = ": " + sum16;
+      }
+      function calculateSum17() {
+        const input1 = Number(document.getElementById("input1").value);
+        const input2 = Number(document.getElementById("input2").value);
+        const sum17 = Number(input1) * Number(input2);
+        document.getElementById("result17").textContent = ": " + sum17;
+      }
+      function calculateSum18() {
+        const input3 = Number(document.getElementById("input3").value);
+        const input4 = Number(document.getElementById("input4").value);
+        const sum18 = Number(input3) * Number(input3);
+        document.getElementById("result18").textContent = ": " + sum18;
+      }
+      function calculateSum19() {
+        const input1 = Number(document.getElementById("input1").value);
+        const input2 = Number(document.getElementById("input2").value);
+        const sum19 = Number(input1) * Number(input2);
+        document.getElementById("result19").textContent = ": " + sum19;
+      }
+      function calculateSum20() {
+        const input3 = Number(document.getElementById("input3").value);
+        const input4 = Number(document.getElementById("input4").value);
+        const sum20 = Number(input3) * Number(input3);
+        document.getElementById("result20").textContent = ": " + sum20;
+      }
+    </script>
+  </body>
+</html>
+
+
+
+

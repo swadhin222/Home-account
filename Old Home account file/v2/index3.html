@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Print Example</title>
+    <style>
+        @media print {
+  body * {
+    display: none;
+  }
+  .pnt, .pnt * {
+    display: block;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <h1 class="pnt">My Print Example</h1>
+    <p>This is some content that won't be printed.</p>
+    <div class="pnt">
+      <p>This is some content that will be printed.</p>
+    </div>
+    <button id="pntbtn">Print</button>
+    <script>
+const pntbtn = document.getElementById("pntbtn");
+pntbtn.addEventListener('click',function(){
+    print();
+})
+    </script>
+  </body>
+</html>

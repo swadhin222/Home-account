@@ -1,0 +1,144 @@
+<html lang="en">
+<style>
+  .breadcrumbs, .post-title, .post-info, .post-share, .related-posts, .show-comments, .sidebar, .name {
+    
+  display:none !important;
+  }
+  .post-headline{
+    margin: 0;
+  }
+  .post-headline {
+    margin-bottom: 0.4rem !important;
+}
+  
+   *{
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+              border: none;
+            }
+            iframe{
+                overflow: hidden;
+                border-color: #dc3545;
+            }
+  main {
+    padding: 0px;
+}
+.mainSection {
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+}
+  
+  /* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+/* Style the close button */
+.topright {
+  float: right;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+.topright:hover {color: red;}
+  
+</style>
+
+
+
+
+
+  
+  
+  
+  
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Submite</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Reserve</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">All</button>
+</div>
+
+<div id="London" class="tabcontent">
+  <!--<span onclick="this.parentElement.style.display='none'" class="topright">&times</span>-->
+  
+  <div style="height: 77vh;"> 
+    <iframe src="https://script.google.com/macros/s/AKfycbwu2Fu4FzBh_cwNNJxHpCkEOcgRIa9IvGWdTLDwfzhpMQ0g8wEfgHhLS2F5vguQb1lo1g/exec" height="100%" width="100%" title="Iframe Example" ></iframe>
+</div>
+  
+  
+  
+</div>
+
+<div id="Paris" class="tabcontent">
+ <!-- <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>-->
+
+  <div style="height: 77vh;"> 
+    
+  <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQakXvH9c_Wfa7mVdbf0UDhFpicIA-0qFk8RV3c1x8vu4qVbekF2_vL6pelqfRTuzM39-YlKs1Gp-Jn/pubhtml?gid=0&amp;single=true&amp;widget=false&amp;name=false;headers=false" height="100%" width="100%"></iframe>
+  
+  </div>
+  
+  
+  
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <!--<span onclick="this.parentElement.style.display='none'" class="topright">&times</span>-->
+    <div style="height: 77vh;"> 
+  <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQakXvH9c_Wfa7mVdbf0UDhFpicIA-0qFk8RV3c1x8vu4qVbekF2_vL6pelqfRTuzM39-YlKs1Gp-Jn/pubhtml?gid=1056167372&amp;single=true&amp;widget=false&amp;headers=false" height="100%" width="100%"></iframe>
+</div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+</html>

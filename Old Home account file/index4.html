@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+ integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" 
+crossorigin="anonymous">
+  <?!= include('JavaScript'); ?>
+  </head>
+<style>
+    .pwd{
+        width: 100%;
+        height: 45px;
+        font-size: 20px;
+        border-top: none ;
+        border-right: none;
+        border-left: none;
+        outline: none;
+    }
+    .w-20{
+        width: 20% !important;
+    }
+    .w-80{
+        width: 80% !important;
+    }
+
+</style>
+  
+  <body>
+    <div class="container">
+            <div class="row">
+                <div class="">
+                    <form id="myForm" onsubmit="handleFormSubmit(this)">
+                        <p class="h4 mb-4 text-center">Contact Details</p>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="submit_date">Submite date</label>
+                                <span class="form-control" name="submit_date"><span id="newdd"></span></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="bill_date">Bill Date</label>
+                                <input type="date" class="form-control" id="dateOfBirth" name="bill_date">
+                            </div>
+                        </div>
+                        
+                            <div class="form-group col-md-6">
+                                <p>Owner Name</p>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="o_name" id="male" value="Jony" onclick="hideInput()" >
+                                    <label class="form-check-label" for="Jony">Jony</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="o_name" id="female" value="Other" onclick="showInput()" >
+                                    <label class="form-check-label" for="o_name">Other</label>
+
+                                    </br><div id="input-container" style="display:none;">
+                                        <input class="pwd" name="o_o_name"type="text" placeholder=" Other Name" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="phone">Phone Number</label>
+                              <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number">
+                            </div>
+
+
+
+
+
+
+
+<!--Item (SL. 01) Start-->
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-4 align-items-center d-flex">SL. 01</div>
+            <div class="col ">
+                <select class="custom-select" name="it_1">
+                    <option value="" selected>Item Name</option>
+                    <option name="it_1" value="মুখের চেপা">মুখের চেপা</option>
+                    <option name="it_1" value="চেপা">চেপা</option>
+                    <option name="it_1" value="চেপা বড়">চেপা বড়</option>
+                    <option name="it_1" value="চেপা ছোট">চেপা ছোট</option>
+                    <option name="it_1" value="লাট">লাট</option>
+                    <option name="it_1" value="algon">algon</option>
+                    <option name="it_1" value="শুঃ পুটি">শুঃ পুটি</option>
+                    <option name="it_1" value="চান্দা">চান্দা</option>
+                    <option name="it_1" value="কাচকী">কাচকী</option>
+                    <option name="it_1" value="নাইলা">নাইলা</option>
+                    <option name="it_1" value="ফেওয়া">ফেওয়া</option>
+                    <option name="it_1" value="চিংড়ী">চিংড়ী</option>
+                    <option name="it_1" value="ফাইস্য">ফাইস্য</option>
+                </select>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            <div class="row">
+                <div class="col-6">
+                    <label for="wt_1">Weight</label><br>
+                    <input class="pwd" id="input1" type="text" placeholder=" Weight" name="wt_1" oninput="calculateSum1()">
+                </div>
+                <div class="col-6">
+                    <label for="pr_1 text-center">Price</label><br>
+                    <input class="pwd" id="input2" type="text" placeholder=" Price" name="pr_1" oninput="calculateSum1()">
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-muted font-weight-bold">
+          Total Taka <span id="result1"></span>
+        </div>
+      </div>
+</div>
+<!--Item (SL. 01) End-->
+
+                        <button type="submit" class="btn btn-primary btn-block mt-5">Submit</button>
+                    </form>
+                    <div id="output"></div>
+                </div>
+            </div>      
+        </div>
+
+
+
+
+<script>
+  function showInput() {
+    var inputContainer = document.getElementById("input-container");
+    inputContainer.style.display = "block";
+  }
+
+  function hideInput() {
+    var inputContainer = document.getElementById("input-container");
+    inputContainer.style.display = "none";
+  }
+</script>
+
+
+<script>
+var customFormat = new Date();
+let newdd = customFormat.toLocaleString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+document.getElementById("newdd").textContent = newdd;
+
+function calculateSum1() {
+        const input1 = Number(document.getElementById("input1").value);
+        const input2 = Number(document.getElementById("input2").value);
+        const sum1 = Number(input1) * Number(input2);
+        document.getElementById("result1").textContent = ": " + sum1;
+      }
+      function calculateSum2() {
+        const input3 = Number(document.getElementById("input3").value);
+        const input4 = Number(document.getElementById("input4").value);
+        const sum2 = Number(input3) * Number(input4);
+        document.getElementById("result2").textContent = ": " + sum2;
+      }
+      function calculateSum3() {
+        const input5 = Number(document.getElementById("input5").value);
+        const input6 = Number(document.getElementById("input6").value);
+        const sum3 = Number(input5) * Number(input6);
+        document.getElementById("result3").textContent = ": " + sum3;
+      }
+      function calculateSum4() {
+        const input7 = Number(document.getElementById("input7").value);
+        const input8 = Number(document.getElementById("input8").value);
+        const sum4 = Number(input7) * Number(input8);
+        document.getElementById("result4").textContent = ": " + sum4;
+      }
+      function calculateSum5() {
+        const input9 = Number(document.getElementById("input9").value);
+        const input10 = Number(document.getElementById("input10").value);
+        const sum5 = Number(input9) * Number(input10);
+        document.getElementById("result5").textContent = ": " + sum5;
+      }
+
+</script>
+
+
+
+
+
+  </body>
+</html>

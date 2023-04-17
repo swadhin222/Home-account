@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" 
+crossorigin="anonymous">
+  <?!= include('JavaScript'); ?>
+  <style>
+    #warning {
+    display: none !important;
+    } 
+    .ss1{
+        background-color: rgb(101, 53, 233);
+        height: 200px;
+    }
+    .bbbb{
+        text-align: center;
+        padding: 2px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 10px;
+        background-color: rgb(245, 241, 7);
+        font-weight: 200;
+        font-size: 12px;
+    }
+    .unerline{
+        margin-top: 20px;
+        height: 1px;
+        background-color: white;
+    }
+    .unerline2{
+        background-color:rgb(243, 231, 222)
+    }
+    .ss2{
+        background-color: aliceblue;
+        border-radius: 10px;
+        margin-top: -90px;
+    }
+    .fzzf{
+        font-size: 15px;
+    }
+    .pwd{
+        width: 100%;
+        height: 30px;
+        font-size: 15px;
+        border: 1px dashed rgb(101, 53, 233);
+        border-top: none ;
+        border-right: none;
+        border-left: none;
+        outline: none;
+        text-align: center;
+    }
+    .w-100vh{
+        height: 100vh;
+    }
+    .card-body{
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        font-weight: bold;
+    }
+    
+    @media only screen and (max-width: 450px) {
+        .fzzf{
+        font-size: 9px;
+    }
+}
+  </style>
+    </head>
+    <body class="unerline2">
+        <div class="container-fluid ss1">
+            <h5 class="text-center pt-3 text-white">Welcome to Home Account</h5>
+            <div class="text-center mt-3"><span class="bbbb">Data Submit</span></div>
+            <div class="unerline"></div>
+        </div>
+    <form id="myForm" onsubmit="handleFormSubmit(this)">
+        <div class="container ss2 pb-1 col-11">
+            <div class="form-row pt-2">
+                <div class="form-group col-6">
+                    <label for="submit_date">Submite date</label>
+                    <span class="form-control" name="submit_date"><span class="fzzf" id="newdd"></span></span>
+                </div>
+                <div class="form-group col-6">
+                    <label for="bill_date">Bill Date</label>
+                    <input type="date" class="form-control" id="dateOfBirth" name="bill_date">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Owner Name *</label>
+                    <select class="custom-select" name="o_name" id="select3" onchange="showInput()" required>
+                        <option value="" selected>Owner Name</option>
+                        <option name="o_name" value="Jony">Jony</option>
+                        <option name="o_name" value="other">Other</option>
+                    </select>
+            </div>
+            <div class="form-group">
+                <div id="inputField" style="display: none;">
+                    <input class="form-control" name="o_o_name"type="text" placeholder=" Other Name" >
+                </div>
+            </div>
+            <div class="form-group pb-3">
+                <label for="phone">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number">
+              </div>
+        </div>
+<div class="container">
+<div class="row row-cols-md-2 row-cols-lg-3 row-cols-1">
+    <div class="col pt-4">
+        <!--Item (SL. 01) Start-->
+        <div>
+            <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-4 align-items-center d-flex">SL. 01</div>
+                    <div class="col">
+                        <select class="custom-select" name="it_1">
+                            <option value="" selected>Item Name</option>
+                            <option name="it_1" value="মুখের চেপা">মুখের চেপা</option>
+                            <option name="it_1" value="চেপা">চেপা</option>
+                            <option name="it_1" value="চেপা বড়">চেপা বড়</option>
+                            <option name="it_1" value="চেপা ছোট">চেপা ছোট</option>
+                            <option name="it_1" value="লাট">লাট</option>
+                            <option name="it_1" value="algon">algon</option>
+                            <option name="it_1" value="শুঃ পুটি">শুঃ পুটি</option>
+                            <option name="it_1" value="চান্দা">চান্দা</option>
+                            <option name="it_1" value="কাচকী">কাচকী</option>
+                            <option name="it_1" value="নাইলা">নাইলা</option>
+                            <option name="it_1" value="ফেওয়া">ফেওয়া</option>
+                            <option name="it_1" value="চিংড়ী">চিংড়ী</option>
+                            <option name="it_1" value="ফাইস্য">ফাইস্য</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="pwd" id="input1" type="tel" autocomplete="off" placeholder=" Weight" name="wt_1" oninput="calculateSum1()">
+                        </div>
+                        <div class="col-6">
+                            <input class="pwd" id="input2" type="tel" autocomplete="off" placeholder=" Price" name="pr_1" oninput="calculateSum1()">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted font-weight-bold">
+                  Total Taka <span id="result1"></span>
+                </div>
+              </div>
+        </div>
+        <!--Item (SL. 01) End-->
+    </div>
+
+    <div class="col pt-4">
+        <!--Item (SL. 02) Start-->
+        <div>
+            <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-4 align-items-center d-flex">SL. 02</div>
+                    <div class="col">
+                        <select class="custom-select" name="it_2">
+                            <option value="" selected>Item Name</option>
+                            <option name="it_2" value="মুখের চেপা">মুখের চেপা</option>
+                            <option name="it_2" value="চেপা">চেপা</option>
+                            <option name="it_2" value="চেপা বড়">চেপা বড়</option>
+                            <option name="it_2" value="চেপা ছোট">চেপা ছোট</option>
+                            <option name="it_2" value="লাট">লাট</option>
+                            <option name="it_2" value="algon">algon</option>
+                            <option name="it_2" value="শুঃ পুটি">শুঃ পুটি</option>
+                            <option name="it_2" value="চান্দা">চান্দা</option>
+                            <option name="it_2" value="কাচকী">কাচকী</option>
+                            <option name="it_2" value="নাইলা">নাইলা</option>
+                            <option name="it_2" value="ফেওয়া">ফেওয়া</option>
+                            <option name="it_2" value="চিংড়ী">চিংড়ী</option>
+                            <option name="it_2" value="ফাইস্য">ফাইস্য</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="pwd" id="input3" type="tel" autocomplete="off" placeholder=" Weight" name="wt_2" oninput="calculateSum2()">
+                        </div>
+                        <div class="col-6">
+                            <input class="pwd" id="input4" type="tel" autocomplete="off" placeholder=" Price" name="pr_2" oninput="calculateSum2()">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted font-weight-bold">
+                  Total Taka <span id="result2"></span>
+                </div>
+              </div>
+        </div>
+        <!--Item (SL. 02) End-->
+    </div>
+
+    <div class="col pt-4">
+        <!--Item (SL. 03) Start-->
+        <div>
+            <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-4 align-items-center d-flex">SL. 03</div>
+                    <div class="col">
+                        <select class="custom-select" name="it_3">
+                            <option value="" selected>Item Name</option>
+                            <option name="it_3" value="মুখের চেপা">মুখের চেপা</option>
+                            <option name="it_3" value="চেপা">চেপা</option>
+                            <option name="it_3" value="চেপা বড়">চেপা বড়</option>
+                            <option name="it_3" value="চেপা ছোট">চেপা ছোট</option>
+                            <option name="it_3" value="লাট">লাট</option>
+                            <option name="it_3" value="algon">algon</option>
+                            <option name="it_3" value="শুঃ পুটি">শুঃ পুটি</option>
+                            <option name="it_3" value="চান্দা">চান্দা</option>
+                            <option name="it_3" value="কাচকী">কাচকী</option>
+                            <option name="it_3" value="নাইলা">নাইলা</option>
+                            <option name="it_3" value="ফেওয়া">ফেওয়া</option>
+                            <option name="it_3" value="চিংড়ী">চিংড়ী</option>
+                            <option name="it_3" value="ফাইস্য">ফাইস্য</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="pwd" id="input5" type="tel" autocomplete="off" placeholder=" Weight" name="wt_3" oninput="calculateSum3()">
+                        </div>
+                        <div class="col-6">
+                            <input class="pwd" id="input6" type="tel" autocomplete="off" placeholder=" Price" name="pr_3" oninput="calculateSum3()">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted font-weight-bold">
+                  Total Taka <span id="result3"></span>
+                </div>
+              </div>
+        </div>
+        <!--Item (SL. 03) End-->
+    </div>
+
+    <div class="col pt-4">
+        <!--Item (SL. 04) Start-->
+        <div>
+            <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-4 align-items-center d-flex">SL. 04</div>
+                    <div class="col">
+                        <select class="custom-select" name="it_4">
+                            <option value="" selected>Item Name</option>
+                            <option name="it_4" value="মুখের চেপা">মুখের চেপা</option>
+                            <option name="it_4" value="চেপা">চেপা</option>
+                            <option name="it_4" value="চেপা বড়">চেপা বড়</option>
+                            <option name="it_4" value="চেপা ছোট">চেপা ছোট</option>
+                            <option name="it_4" value="লাট">লাট</option>
+                            <option name="it_4" value="algon">algon</option>
+                            <option name="it_4" value="শুঃ পুটি">শুঃ পুটি</option>
+                            <option name="it_4" value="চান্দা">চান্দা</option>
+                            <option name="it_4" value="কাচকী">কাচকী</option>
+                            <option name="it_4" value="নাইলা">নাইলা</option>
+                            <option name="it_4" value="ফেওয়া">ফেওয়া</option>
+                            <option name="it_4" value="চিংড়ী">চিংড়ী</option>
+                            <option name="it_4" value="ফাইস্য">ফাইস্য</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="pwd" id="input7" type="tel" autocomplete="off" placeholder=" Weight" name="wt_4" oninput="calculateSum4()">
+                        </div>
+                        <div class="col-6">
+                            <input class="pwd" id="input8" type="tel" autocomplete="off" placeholder=" Price" name="pr_4" oninput="calculateSum4()">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted font-weight-bold">
+                  Total Taka <span id="result4"></span>
+                </div>
+              </div>
+        </div>
+        <!--Item (SL. 04) End-->
+    </div>
+
+    <div class="col pt-4">
+        <!--Item (SL. 05) Start-->
+        <div>
+            <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-4 align-items-center d-flex">SL. 05</div>
+                    <div class="col">
+                        <select class="custom-select" name="it_5">
+                            <option value="" selected>Item Name</option>
+                            <option name="it_5" value="মুখের চেপা">মুখের চেপা</option>
+                            <option name="it_5" value="চেপা">চেপা</option>
+                            <option name="it_5" value="চেপা বড়">চেপা বড়</option>
+                            <option name="it_5" value="চেপা ছোট">চেপা ছোট</option>
+                            <option name="it_5" value="লাট">লাট</option>
+                            <option name="it_5" value="algon">algon</option>
+                            <option name="it_5" value="শুঃ পুটি">শুঃ পুটি</option>
+                            <option name="it_5" value="চান্দা">চান্দা</option>
+                            <option name="it_5" value="কাচকী">কাচকী</option>
+                            <option name="it_5" value="নাইলা">নাইলা</option>
+                            <option name="it_5" value="ফেওয়া">ফেওয়া</option>
+                            <option name="it_5" value="চিংড়ী">চিংড়ী</option>
+                            <option name="it_5" value="ফাইস্য">ফাইস্য</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="pwd" id="input9" type="tel" autocomplete="off" placeholder=" Weight" name="wt_5" oninput="calculateSum5()">
+                        </div>
+                        <div class="col-6">
+                            <input class="pwd" id="input10" type="tel" autocomplete="off" placeholder=" Price" name="pr_5" oninput="calculateSum5()">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted font-weight-bold">
+                  Total Taka <span id="result5"></span>
+                </div>
+              </div>
+        </div>
+        <!--Item (SL. 05) End-->
+    </div>
+
+    <div class="col pt-4">
+        <!--Item (SL. 06) Start-->
+        <div>
+            <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-4 align-items-center d-flex">SL. 06</div>
+                    <div class="col">
+                        <select class="custom-select" name="it_6">
+                            <option value="" selected>Item Name</option>
+                            <option name="it_6" value="মুখের চেপা">মুখের চেপা</option>
+                            <option name="it_6" value="চেপা">চেপা</option>
+                            <option name="it_6" value="চেপা বড়">চেপা বড়</option>
+                            <option name="it_6" value="চেপা ছোট">চেপা ছোট</option>
+                            <option name="it_6" value="লাট">লাট</option>
+                            <option name="it_6" value="algon">algon</option>
+                            <option name="it_6" value="শুঃ পুটি">শুঃ পুটি</option>
+                            <option name="it_6" value="চান্দা">চান্দা</option>
+                            <option name="it_6" value="কাচকী">কাচকী</option>
+                            <option name="it_6" value="নাইলা">নাইলা</option>
+                            <option name="it_6" value="ফেওয়া">ফেওয়া</option>
+                            <option name="it_6" value="চিংড়ী">চিংড়ী</option>
+                            <option name="it_6" value="ফাইস্য">ফাইস্য</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="pwd" id="input11" type="tel" autocomplete="off" placeholder=" Weight" name="wt_6" oninput="calculateSum6()">
+                        </div>
+                        <div class="col-6">
+                            <input class="pwd" id="input12" type="tel" autocomplete="off" placeholder=" Price" name="pr_6" oninput="calculateSum6()">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted font-weight-bold">
+                  Total Taka <span id="result6"></span>
+                </div>
+              </div>
+        </div>
+        <!--Item (SL. 06) End-->
+    </div>
+
+    <div class="col pt-4">
+        <!--Item (SL. 07) Start-->
+        <div>
+            <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-4 align-items-center d-flex">SL. 07</div>
+                    <div class="col">
+                        <select class="custom-select" name="it_7">
+                            <option value="" selected>Item Name</option>
+                            <option name="it_7" value="মুখের চেপা">মুখের চেপা</option>
+                            <option name="it_7" value="চেপা">চেপা</option>
+                            <option name="it_7" value="চেপা বড়">চেপা বড়</option>
+                            <option name="it_7" value="চেপা ছোট">চেপা ছোট</option>
+                            <option name="it_7" value="লাট">লাট</option>
+                            <option name="it_7" value="algon">algon</option>
+                            <option name="it_7" value="শুঃ পুটি">শুঃ পুটি</option>
+                            <option name="it_7" value="চান্দা">চান্দা</option>
+                            <option name="it_7" value="কাচকী">কাচকী</option>
+                            <option name="it_7" value="নাইলা">নাইলা</option>
+                            <option name="it_7" value="ফেওয়া">ফেওয়া</option>
+                            <option name="it_7" value="চিংড়ী">চিংড়ী</option>
+                            <option name="it_7" value="ফাইস্য">ফাইস্য</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="pwd" id="input13" type="tel" autocomplete="off" placeholder=" Weight" name="wt_7" oninput="calculateSum7()">
+                        </div>
+                        <div class="col-6">
+                            <input class="pwd" id="input14" type="tel" autocomplete="off" placeholder=" Price" name="pr_7" oninput="calculateSum7()">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted font-weight-bold">
+                  Total Taka <span id="result7"></span>
+                </div>
+              </div>
+        </div>
+        <!--Item (SL. 07) End-->
+    </div>
+
+    <div class="col pt-4">
+        <!--Item (SL. 08) Start-->
+        <div>
+            <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-4 align-items-center d-flex">SL. 08</div>
+                    <div class="col">
+                        <select class="custom-select" name="it_8">
+                            <option value="" selected>Item Name</option>
+                            <option name="it_8" value="মুখের চেপা">মুখের চেপা</option>
+                            <option name="it_8" value="চেপা">চেপা</option>
+                            <option name="it_8" value="চেপা বড়">চেপা বড়</option>
+                            <option name="it_8" value="চেপা ছোট">চেপা ছোট</option>
+                            <option name="it_8" value="লাট">লাট</option>
+                            <option name="it_8" value="algon">algon</option>
+                            <option name="it_8" value="শুঃ পুটি">শুঃ পুটি</option>
+                            <option name="it_8" value="চান্দা">চান্দা</option>
+                            <option name="it_8" value="কাচকী">কাচকী</option>
+                            <option name="it_8" value="নাইলা">নাইলা</option>
+                            <option name="it_8" value="ফেওয়া">ফেওয়া</option>
+                            <option name="it_8" value="চিংড়ী">চিংড়ী</option>
+                            <option name="it_8" value="ফাইস্য">ফাইস্য</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="pwd" id="input15" type="tel" autocomplete="off" placeholder=" Weight" name="wt_8" oninput="calculateSum8()">
+                        </div>
+                        <div class="col-6">
+                            <input class="pwd" id="input16" type="tel" autocomplete="off" placeholder=" Price" name="pr_8" oninput="calculateSum8()">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted font-weight-bold">
+                  Total Taka <span id="result8"></span>
+                </div>
+              </div>
+        </div>
+        <!--Item (SL. 08) End-->
+    </div>
+
+    <div class="col pt-4">
+        <!--Item (SL. 09) Start-->
+        <div>
+            <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-4 align-items-center d-flex">SL. 09</div>
+                    <div class="col">
+                        <select class="custom-select" name="it_9">
+                            <option value="" selected>Item Name</option>
+                            <option name="it_9" value="মুখের চেপা">মুখের চেপা</option>
+                            <option name="it_9" value="চেপা">চেপা</option>
+                            <option name="it_9" value="চেপা বড়">চেপা বড়</option>
+                            <option name="it_9" value="চেপা ছোট">চেপা ছোট</option>
+                            <option name="it_9" value="লাট">লাট</option>
+                            <option name="it_9" value="algon">algon</option>
+                            <option name="it_9" value="শুঃ পুটি">শুঃ পুটি</option>
+                            <option name="it_9" value="চান্দা">চান্দা</option>
+                            <option name="it_9" value="কাচকী">কাচকী</option>
+                            <option name="it_9" value="নাইলা">নাইলা</option>
+                            <option name="it_9" value="ফেওয়া">ফেওয়া</option>
+                            <option name="it_9" value="চিংড়ী">চিংড়ী</option>
+                            <option name="it_9" value="ফাইস্য">ফাইস্য</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="pwd" id="input17" type="tel" autocomplete="off" placeholder=" Weight" name="wt_9" oninput="calculateSum9()">
+                        </div>
+                        <div class="col-6">
+                            <input class="pwd" id="input18" type="tel" autocomplete="off" placeholder=" Price" name="pr_9" oninput="calculateSum9()">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted font-weight-bold">
+                  Total Taka <span id="result9"></span>
+                </div>
+              </div>
+        </div>
+        <!--Item (SL. 09) End-->
+    </div>
+
+    <div class="col pt-4">
+        <!--Item (SL. 10) Start-->
+        <div>
+            <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-4 align-items-center d-flex">SL. 10</div>
+                    <div class="col">
+                        <select class="custom-select" name="it_10">
+                            <option value="" selected>Item Name</option>
+                            <option name="it_10" value="মুখের চেপা">মুখের চেপা</option>
+                            <option name="it_10" value="চেপা">চেপা</option>
+                            <option name="it_10" value="চেপা বড়">চেপা বড়</option>
+                            <option name="it_10" value="চেপা ছোট">চেপা ছোট</option>
+                            <option name="it_10" value="লাট">লাট</option>
+                            <option name="it_10" value="algon">algon</option>
+                            <option name="it_10" value="শুঃ পুটি">শুঃ পুটি</option>
+                            <option name="it_10" value="চান্দা">চান্দা</option>
+                            <option name="it_10" value="কাচকী">কাচকী</option>
+                            <option name="it_10" value="নাইলা">নাইলা</option>
+                            <option name="it_10" value="ফেওয়া">ফেওয়া</option>
+                            <option name="it_10" value="চিংড়ী">চিংড়ী</option>
+                            <option name="it_10" value="ফাইস্য">ফাইস্য</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="pwd" id="input19" type="tel" autocomplete="off" placeholder=" Weight" name="wt_10" oninput="calculateSum10()">
+                        </div>
+                        <div class="col-6">
+                            <input class="pwd" id="input20" type="tel" autocomplete="off" placeholder=" Price" name="pr_10" oninput="calculateSum10()">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted font-weight-bold">
+                  Total Taka <span id="result10"></span>
+                </div>
+              </div>
+        </div>
+        <!--Item (SL. 10) End-->
+    </div>
+
+    <div class="col pt-4">
+        <!--Item (SL. 11) Start-->
+        <div>
+            <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-4 align-items-center d-flex">SL. 11</div>
+                    <div class="col">
+                        <select class="custom-select" name="it_11">
+                            <option value="" selected>Item Name</option>
+                            <option name="it_11" value="মুখের চেপা">মুখের চেপা</option>
+                            <option name="it_11" value="চেপা">চেপা</option>
+                            <option name="it_11" value="চেপা বড়">চেপা বড়</option>
+                            <option name="it_11" value="চেপা ছোট">চেপা ছোট</option>
+                            <option name="it_11" value="লাট">লাট</option>
+                            <option name="it_11" value="algon">algon</option>
+                            <option name="it_11" value="শুঃ পুটি">শুঃ পুটি</option>
+                            <option name="it_11" value="চান্দা">চান্দা</option>
+                            <option name="it_11" value="কাচকী">কাচকী</option>
+                            <option name="it_11" value="নাইলা">নাইলা</option>
+                            <option name="it_11" value="ফেওয়া">ফেওয়া</option>
+                            <option name="it_11" value="চিংড়ী">চিংড়ী</option>
+                            <option name="it_11" value="ফাইস্য">ফাইস্য</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="pwd" id="input21" type="tel" autocomplete="off" placeholder=" Weight" name="wt_11" oninput="calculateSum11()">
+                        </div>
+                        <div class="col-6">
+                            <input class="pwd" id="input22" type="tel" autocomplete="off" placeholder=" Price" name="pr_11" oninput="calculateSum11()">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted font-weight-bold">
+                  Total Taka <span id="result11"></span>
+                </div>
+              </div>
+        </div>
+        <!--Item (SL. 11) End-->
+    </div>
+
+    <div class="col pt-4">
+        <!--Item (SL. 12) Start-->
+        <div>
+            <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-4 align-items-center d-flex">SL. 12</div>
+                    <div class="col">
+                        <select class="custom-select" name="it_12">
+                            <option value="" selected>Item Name</option>
+                            <option name="it_12" value="মুখের চেপা">মুখের চেপা</option>
+                            <option name="it_12" value="চেপা">চেপা</option>
+                            <option name="it_12" value="চেপা বড়">চেপা বড়</option>
+                            <option name="it_12" value="চেপা ছোট">চেপা ছোট</option>
+                            <option name="it_12" value="লাট">লাট</option>
+                            <option name="it_12" value="algon">algon</option>
+                            <option name="it_12" value="শুঃ পুটি">শুঃ পুটি</option>
+                            <option name="it_12" value="চান্দা">চান্দা</option>
+                            <option name="it_12" value="কাচকী">কাচকী</option>
+                            <option name="it_12" value="নাইলা">নাইলা</option>
+                            <option name="it_12" value="ফেওয়া">ফেওয়া</option>
+                            <option name="it_12" value="চিংড়ী">চিংড়ী</option>
+                            <option name="it_12" value="ফাইস্য">ফাইস্য</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="pwd" id="input23" type="tel" autocomplete="off" placeholder=" Weight" name="wt_12" oninput="calculateSum12()">
+                        </div>
+                        <div class="col-6">
+                            <input class="pwd" id="input24" type="tel" autocomplete="off" placeholder=" Price" name="pr_12" oninput="calculateSum12()">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted font-weight-bold">
+                  Total Taka <span id="result12"></span>
+                </div>
+              </div>
+        </div>
+        <!--Item (SL. 12) End-->
+    </div>
+
+    <div class="col pt-4">
+        <!--Item (SL. 13) Start-->
+        <div>
+            <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-4 align-items-center d-flex">SL. 13</div>
+                    <div class="col">
+                        <select class="custom-select" name="it_13">
+                            <option value="" selected>Item Name</option>
+                            <option name="it_13" value="মুখের চেপা">মুখের চেপা</option>
+                            <option name="it_13" value="চেপা">চেপা</option>
+                            <option name="it_13" value="চেপা বড়">চেপা বড়</option>
+                            <option name="it_13" value="চেপা ছোট">চেপা ছোট</option>
+                            <option name="it_13" value="লাট">লাট</option>
+                            <option name="it_13" value="algon">algon</option>
+                            <option name="it_13" value="শুঃ পুটি">শুঃ পুটি</option>
+                            <option name="it_13" value="চান্দা">চান্দা</option>
+                            <option name="it_13" value="কাচকী">কাচকী</option>
+                            <option name="it_13" value="নাইলা">নাইলা</option>
+                            <option name="it_13" value="ফেওয়া">ফেওয়া</option>
+                            <option name="it_13" value="চিংড়ী">চিংড়ী</option>
+                            <option name="it_13" value="ফাইস্য">ফাইস্য</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="pwd" id="input25" type="tel" autocomplete="off" placeholder=" Weight" name="wt_13" oninput="calculateSum13()">
+                        </div>
+                        <div class="col-6">
+                            <input class="pwd" id="input26" type="tel" autocomplete="off" placeholder=" Price" name="pr_13" oninput="calculateSum13()">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted font-weight-bold">
+                  Total Taka <span id="result13"></span>
+                </div>
+              </div>
+        </div>
+        <!--Item (SL. 13) End-->
+    </div>
+
+    <div class="col pt-4">
+        <!--Item (SL. 14) Start-->
+        <div>
+            <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-4 align-items-center d-flex">SL. 14</div>
+                    <div class="col">
+                        <select class="custom-select" name="it_14">
+                            <option value="" selected>Item Name</option>
+                            <option name="it_14" value="মুখের চেপা">মুখের চেপা</option>
+                            <option name="it_14" value="চেপা">চেপা</option>
+                            <option name="it_14" value="চেপা বড়">চেপা বড়</option>
+                            <option name="it_14" value="চেপা ছোট">চেপা ছোট</option>
+                            <option name="it_14" value="লাট">লাট</option>
+                            <option name="it_14" value="algon">algon</option>
+                            <option name="it_14" value="শুঃ পুটি">শুঃ পুটি</option>
+                            <option name="it_14" value="চান্দা">চান্দা</option>
+                            <option name="it_14" value="কাচকী">কাচকী</option>
+                            <option name="it_14" value="নাইলা">নাইলা</option>
+                            <option name="it_14" value="ফেওয়া">ফেওয়া</option>
+                            <option name="it_14" value="চিংড়ী">চিংড়ী</option>
+                            <option name="it_14" value="ফাইস্য">ফাইস্য</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="pwd" id="input27" type="tel" autocomplete="off" placeholder=" Weight" name="wt_14" oninput="calculateSum14()">
+                        </div>
+                        <div class="col-6">
+                            <input class="pwd" id="input28" type="tel" autocomplete="off" placeholder=" Price" name="pr_14" oninput="calculateSum14()">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted font-weight-bold">
+                  Total Taka <span id="result14"></span>
+                </div>
+              </div>
+        </div>
+        <!--Item (SL. 14) End-->
+    </div>
+
+    <div class="col pt-4">
+        <!--Item (SL. 15) Start-->
+        <div>
+            <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-4 align-items-center d-flex">SL. 15</div>
+                    <div class="col">
+                        <select class="custom-select" name="it_15">
+                            <option value="" selected>Item Name</option>
+                            <option name="it_15" value="মুখের চেপা">মুখের চেপা</option>
+                            <option name="it_15" value="চেপা">চেপা</option>
+                            <option name="it_15" value="চেপা বড়">চেপা বড়</option>
+                            <option name="it_15" value="চেপা ছোট">চেপা ছোট</option>
+                            <option name="it_15" value="লাট">লাট</option>
+                            <option name="it_15" value="algon">algon</option>
+                            <option name="it_15" value="শুঃ পুটি">শুঃ পুটি</option>
+                            <option name="it_15" value="চান্দা">চান্দা</option>
+                            <option name="it_15" value="কাচকী">কাচকী</option>
+                            <option name="it_15" value="নাইলা">নাইলা</option>
+                            <option name="it_15" value="ফেওয়া">ফেওয়া</option>
+                            <option name="it_15" value="চিংড়ী">চিংড়ী</option>
+                            <option name="it_15" value="ফাইস্য">ফাইস্য</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="pwd" id="input29" type="tel" autocomplete="off" placeholder=" Weight" name="wt_15" oninput="calculateSum15()">
+                        </div>
+                        <div class="col-6">
+                            <input class="pwd" id="input30" type="tel" autocomplete="off" placeholder=" Price" name="pr_15" oninput="calculateSum15()">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted font-weight-bold">
+                  Total Taka <span id="result15"></span>
+                </div>
+              </div>
+        </div>
+        <!--Item (SL. 15) End-->
+    </div>
+
+    <div class="col pt-4">
+        <!--Item (SL. 16) Start-->
+        <div>
+            <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-4 align-items-center d-flex">SL. 16</div>
+                    <div class="col">
+                        <select class="custom-select" name="it_16">
+                            <option value="" selected>Item Name</option>
+                            <option name="it_16" value="মুখের চেপা">মুখের চেপা</option>
+                            <option name="it_16" value="চেপা">চেপা</option>
+                            <option name="it_16" value="চেপা বড়">চেপা বড়</option>
+                            <option name="it_16" value="চেপা ছোট">চেপা ছোট</option>
+                            <option name="it_16" value="লাট">লাট</option>
+                            <option name="it_16" value="algon">algon</option>
+                            <option name="it_16" value="শুঃ পুটি">শুঃ পুটি</option>
+                            <option name="it_16" value="চান্দা">চান্দা</option>
+                            <option name="it_16" value="কাচকী">কাচকী</option>
+                            <option name="it_16" value="নাইলা">নাইলা</option>
+                            <option name="it_16" value="ফেওয়া">ফেওয়া</option>
+                            <option name="it_16" value="চিংড়ী">চিংড়ী</option>
+                            <option name="it_16" value="ফাইস্য">ফাইস্য</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="pwd" id="input31" type="tel" autocomplete="off" placeholder=" Weight" name="wt_16" oninput="calculateSum16()">
+                        </div>
+                        <div class="col-6">
+                            <input class="pwd" id="input32" type="tel" autocomplete="off" placeholder=" Price" name="pr_16" oninput="calculateSum16()">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted font-weight-bold">
+                  Total Taka <span id="result16"></span>
+                </div>
+              </div>
+        </div>
+        <!--Item (SL. 16) End-->
+    </div>
+
+    <div class="col pt-4">
+        <!--Item (SL. 17) Start-->
+        <div>
+            <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-4 align-items-center d-flex">SL. 17</div>
+                    <div class="col">
+                        <select class="custom-select" name="it_17">
+                            <option value="" selected>Item Name</option>
+                            <option name="it_17" value="মুখের চেপা">মুখের চেপা</option>
+                            <option name="it_17" value="চেপা">চেপা</option>
+                            <option name="it_17" value="চেপা বড়">চেপা বড়</option>
+                            <option name="it_17" value="চেপা ছোট">চেপা ছোট</option>
+                            <option name="it_17" value="লাট">লাট</option>
+                            <option name="it_17" value="algon">algon</option>
+                            <option name="it_17" value="শুঃ পুটি">শুঃ পুটি</option>
+                            <option name="it_17" value="চান্দা">চান্দা</option>
+                            <option name="it_17" value="কাচকী">কাচকী</option>
+                            <option name="it_17" value="নাইলা">নাইলা</option>
+                            <option name="it_17" value="ফেওয়া">ফেওয়া</option>
+                            <option name="it_17" value="চিংড়ী">চিংড়ী</option>
+                            <option name="it_17" value="ফাইস্য">ফাইস্য</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="pwd" id="input33" type="tel" autocomplete="off" placeholder=" Weight" name="wt_17" oninput="calculateSum17()">
+                        </div>
+                        <div class="col-6">
+                            <input class="pwd" id="input34" type="tel" autocomplete="off" placeholder=" Price" name="pr_17" oninput="calculateSum17()">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted font-weight-bold">
+                  Total Taka <span id="result17"></span>
+                </div>
+              </div>
+        </div>
+        <!--Item (SL. 17) End-->
+    </div>
+
+    <div class="col pt-4">
+        <!--Item (SL. 18) Start-->
+        <div>
+            <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-4 align-items-center d-flex">SL. 18</div>
+                    <div class="col">
+                        <select class="custom-select" name="it_18">
+                            <option value="" selected>Item Name</option>
+                            <option name="it_18" value="মুখের চেপা">মুখের চেপা</option>
+                            <option name="it_18" value="চেপা">চেপা</option>
+                            <option name="it_18" value="চেপা বড়">চেপা বড়</option>
+                            <option name="it_18" value="চেপা ছোট">চেপা ছোট</option>
+                            <option name="it_18" value="লাট">লাট</option>
+                            <option name="it_18" value="algon">algon</option>
+                            <option name="it_18" value="শুঃ পুটি">শুঃ পুটি</option>
+                            <option name="it_18" value="চান্দা">চান্দা</option>
+                            <option name="it_18" value="কাচকী">কাচকী</option>
+                            <option name="it_18" value="নাইলা">নাইলা</option>
+                            <option name="it_18" value="ফেওয়া">ফেওয়া</option>
+                            <option name="it_18" value="চিংড়ী">চিংড়ী</option>
+                            <option name="it_18" value="ফাইস্য">ফাইস্য</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="pwd" id="input35" type="tel" autocomplete="off" placeholder=" Weight" name="wt_18" oninput="calculateSum18()">
+                        </div>
+                        <div class="col-6">
+                            <input class="pwd" id="input36" type="tel" autocomplete="off" placeholder=" Price" name="pr_18" oninput="calculateSum18()">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted font-weight-bold">
+                  Total Taka <span id="result18"></span>
+                </div>
+              </div>
+        </div>
+        <!--Item (SL. 18) End-->
+    </div>
+
+    <div class="col pt-4">
+        <!--Item (SL. 19) Start-->
+        <div>
+            <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-4 align-items-center d-flex">SL. 19</div>
+                    <div class="col">
+                        <select class="custom-select" name="it_19">
+                            <option value="" selected>Item Name</option>
+                            <option name="it_19" value="মুখের চেপা">মুখের চেপা</option>
+                            <option name="it_19" value="চেপা">চেপা</option>
+                            <option name="it_19" value="চেপা বড়">চেপা বড়</option>
+                            <option name="it_19" value="চেপা ছোট">চেপা ছোট</option>
+                            <option name="it_19" value="লাট">লাট</option>
+                            <option name="it_19" value="algon">algon</option>
+                            <option name="it_19" value="শুঃ পুটি">শুঃ পুটি</option>
+                            <option name="it_19" value="চান্দা">চান্দা</option>
+                            <option name="it_19" value="কাচকী">কাচকী</option>
+                            <option name="it_19" value="নাইলা">নাইলা</option>
+                            <option name="it_19" value="ফেওয়া">ফেওয়া</option>
+                            <option name="it_19" value="চিংড়ী">চিংড়ী</option>
+                            <option name="it_19" value="ফাইস্য">ফাইস্য</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="pwd" id="input37" type="tel" autocomplete="off" placeholder=" Weight" name="wt_19" oninput="calculateSum19()">
+                        </div>
+                        <div class="col-6">
+                            <input class="pwd" id="input38" type="tel" autocomplete="off" placeholder=" Price" name="pr_19" oninput="calculateSum19()">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted font-weight-bold">
+                  Total Taka <span id="result19"></span>
+                </div>
+              </div>
+        </div>
+        <!--Item (SL. 19) End-->
+    </div>
+
+    <div class="col pt-4">
+        <!--Item (SL. 20) Start-->
+        <div>
+            <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-4 align-items-center d-flex">SL. 20</div>
+                    <div class="col">
+                        <select class="custom-select" name="it_20">
+                            <option value="" selected>Item Name</option>
+                            <option name="it_20" value="মুখের চেপা">মুখের চেপা</option>
+                            <option name="it_20" value="চেপা">চেপা</option>
+                            <option name="it_20" value="চেপা বড়">চেপা বড়</option>
+                            <option name="it_20" value="চেপা ছোট">চেপা ছোট</option>
+                            <option name="it_20" value="লাট">লাট</option>
+                            <option name="it_20" value="algon">algon</option>
+                            <option name="it_20" value="শুঃ পুটি">শুঃ পুটি</option>
+                            <option name="it_20" value="চান্দা">চান্দা</option>
+                            <option name="it_20" value="কাচকী">কাচকী</option>
+                            <option name="it_20" value="নাইলা">নাইলা</option>
+                            <option name="it_20" value="ফেওয়া">ফেওয়া</option>
+                            <option name="it_20" value="চিংড়ী">চিংড়ী</option>
+                            <option name="it_20" value="ফাইস্য">ফাইস্য</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="row">
+                        <div class="col-6">
+                            <input class="pwd" id="input39" type="tel" autocomplete="off" placeholder=" Weight" name="wt_20" oninput="calculateSum20()">
+                        </div>
+                        <div class="col-6">
+                            <input class="pwd" id="input40" type="tel" autocomplete="off" placeholder=" Price" name="pr_20" oninput="calculateSum20()">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted font-weight-bold">
+                  Total Taka <span id="result20"></span>
+                </div>
+              </div>
+        </div>
+        <!--Item (SL. 20) End-->
+    </div>   
+</div>
+</div>
+
+<div class="container mt-4">
+<!--Total sum Start-->
+<div>
+  <div class="card">
+      <div class="card-footer text-muted font-weight-bold">
+        Total Taka <span id="totalsu"></span>
+      </div>
+  </div>
+</div>
+<!--Item (SL. 15) End-->
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="mt-5 pb-5 text-center">
+    <button type="submit" class="btn btn-success">Submit</button>
+</div>
+</form>
+<div id="output"></div>
+</div>
+        
+
+
+
+
+
+<script>
+        var customFormat = new Date();
+        let newdd = customFormat.toLocaleString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        document.getElementById("newdd").textContent = newdd;     
+</script>
+
+<script>
+    function showInput() {
+      var selectBox = document.getElementById("select3");
+      var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+      var inputField = document.getElementById("inputField");
+      
+      if (selectedValue === "other") {
+        inputField.style.display = "block";
+      } else {
+        inputField.style.display = "none";
+      }
+    }
+    </script>
+<script>
+    function calculateSum1() {
+        const input1 = Number(document.getElementById("input1").value);
+        const input2 = Number(document.getElementById("input2").value);
+        const sum1 = Number(input1) * Number(input2);
+        document.getElementById("result1").textContent = ": " + sum1;
+      }
+      function calculateSum2() {
+        const input3 = Number(document.getElementById("input3").value);
+        const input4 = Number(document.getElementById("input4").value);
+        const sum2 = Number(input3) * Number(input4);
+        document.getElementById("result2").textContent = ": " + sum2;
+      }
+      function calculateSum3() {
+        const input5 = Number(document.getElementById("input5").value);
+        const input6 = Number(document.getElementById("input6").value);
+        const sum3 = Number(input5) * Number(input6);
+        document.getElementById("result3").textContent = ": " + sum3;
+      }
+      function calculateSum4() {
+        const input7 = Number(document.getElementById("input7").value);
+        const input8 = Number(document.getElementById("input8").value);
+        const sum4 = Number(input7) * Number(input8);
+        document.getElementById("result4").textContent = ": " + sum4;
+      }
+      function calculateSum5() {
+        const input9 = Number(document.getElementById("input9").value);
+        const input10 = Number(document.getElementById("input10").value);
+        const sum5 = Number(input9) * Number(input10);
+        document.getElementById("result5").textContent = ": " + sum5;
+      }
+      function calculateSum6() {
+        const input11 = Number(document.getElementById("input11").value);
+        const input12 = Number(document.getElementById("input12").value);
+        const sum6 = Number(input11) * Number(input12);
+        document.getElementById("result6").textContent = ": " + sum6;
+      }
+      function calculateSum7() {
+        const input13 = Number(document.getElementById("input13").value);
+        const input14 = Number(document.getElementById("input14").value);
+        const sum7 = Number(input13) * Number(input14);
+        document.getElementById("result7").textContent = ": " + sum7;
+      }
+      function calculateSum8() {
+        const input15 = Number(document.getElementById("input15").value);
+        const input16 = Number(document.getElementById("input16").value);
+        const sum8 = Number(input15) * Number(input16);
+        document.getElementById("result8").textContent = ": " + sum8;
+      }
+      function calculateSum9() {
+        const input17 = Number(document.getElementById("input17").value);
+        const input18 = Number(document.getElementById("input18").value);
+        const sum9 = Number(input17) * Number(input18);
+        document.getElementById("result9").textContent = ": " + sum9;
+      }
+      function calculateSum10() {
+        const input19 = Number(document.getElementById("input19").value);
+        const input20 = Number(document.getElementById("input20").value);
+        const sum10 = Number(input19) * Number(input20);
+        document.getElementById("result10").textContent = ": " + sum10;
+      }
+      function calculateSum11() {
+        const input21 = Number(document.getElementById("input21").value);
+        const input22 = Number(document.getElementById("input22").value);
+        const sum11 = Number(input21) * Number(input22);
+        document.getElementById("result11").textContent = ": " + sum11;
+      }
+      function calculateSum12() {
+        const input23 = Number(document.getElementById("input23").value);
+        const input24 = Number(document.getElementById("input24").value);
+        const sum12 = Number(input23) * Number(input24);
+        document.getElementById("result12").textContent = ": " + sum12;
+      }
+      function calculateSum13() {
+        const input25 = Number(document.getElementById("input25").value);
+        const input26 = Number(document.getElementById("input26").value);
+        const sum13 = Number(input25) * Number(input26);
+        document.getElementById("result13").textContent = ": " + sum13;
+      }
+      function calculateSum14() {
+        const input27 = Number(document.getElementById("input27").value);
+        const input28 = Number(document.getElementById("input28").value);
+        const sum14 = Number(input27) * Number(input28);
+        document.getElementById("result14").textContent = ": " + sum14;
+      }
+      function calculateSum15() {
+        const input29 = Number(document.getElementById("input29").value);
+        const input30 = Number(document.getElementById("input30").value);
+        const sum15 = Number(input29) * Number(input30);
+        document.getElementById("result15").textContent = ": " + sum15;
+      }
+      function calculateSum16() {
+        const input31 = Number(document.getElementById("input31").value);
+        const input32 = Number(document.getElementById("input32").value);
+        const sum16 = Number(input31) * Number(input32);
+        document.getElementById("result16").textContent = ": " + sum16;
+      }
+      function calculateSum17() {
+        const input33 = Number(document.getElementById("input33").value);
+        const input34 = Number(document.getElementById("input34").value);
+        const sum17 = Number(input33) * Number(input34);
+        document.getElementById("result17").textContent = ": " + sum17;
+      }
+      function calculateSum18() {
+        const input35 = Number(document.getElementById("input35").value);
+        const input36 = Number(document.getElementById("input36").value);
+        const sum18 = Number(input35) * Number(input36);
+        document.getElementById("result18").textContent = ": " + sum18;
+      }
+      function calculateSum19() {
+        const input37 = Number(document.getElementById("input37").value);
+        const input38 = Number(document.getElementById("input38").value);
+        const sum19 = Number(input37) * Number(input38);
+        document.getElementById("result19").textContent = ": " + sum19;
+      }
+      function calculateSum20() {
+        const input39 = Number(document.getElementById("input39").value);
+        const input40 = Number(document.getElementById("input40").value);
+        const sum20 = Number(input39) * Number(input40);
+        document.getElementById("result20").textContent = ": " + sum20;
+      }
+      
+      calculateSum20();
+      const totalsum = sum20 + sum20;
+      document.getElementById("totalsu").textContent = ": " + totalsum;
+</script>
+    </body>
+</html>
+
+
+
+  
