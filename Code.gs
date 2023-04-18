@@ -1,7 +1,7 @@
 function doGet(e){
   return HtmlService.createTemplateFromFile("index")
                      .evaluate()
-                     .setTitle("CodyLab")
+                     .setTitle("Home Account - Display")
                      .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }
 function include(filename) {
