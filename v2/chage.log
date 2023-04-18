@@ -1,4 +1,13 @@
 -------------
+18 Aplril 2023
+2:34 PM To 7:25
+    index.html
+        + add Home account text click, then Bill id section hide.
+        + add Open link Button.(click to new tab open)
+        + add bill input, add placeholder text
+        - remove refresh Button.
+        
+-------------
 18 April 2023
 11:54 AM to 2:08 PM
     code.gs

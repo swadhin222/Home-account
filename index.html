@@ -13,34 +13,23 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-<h2 id="ot">dd</h2>
-<h2 id="ot2">dd</h2>
-<h2 id="ot3">dd</h2>
-<h2 id="ot4">dd</h2>
 
-        
+        <button id="myButton">Open current page in new tab</button>
 <script>
+    // get the button element
+const button = document.getElementById('urlnewtab');
 
-const date = new Date();
-const options = { weekday: 'short'};
-const longDate = date.toLocaleDateString('en-US', options);
-document.getElementById("ot").textContent = longDate;
+// add an event listener to the button
+button.addEventListener('click', function(event) {
+  // get the current URL of the page
+  const currentUrl = window.location.href;
 
-const date2 = new Date();
-const options2 = { weekday: 'short'};
-const longDate2 = date2.toLocaleDateString('en-US', options2);
-document.getElementById("ot2").textContent = longDate2;
+  // open the current URL in a new tab
+  window.open(currentUrl, '_blank');
+});
 
-const date3 = new Date();
-const options3 = { year: 'numeric', month: 'long', day: 'numeric' };
-const longDate3 = date3.toLocaleDateString('en-US', options3);
-document.getElementById("ot3").textContent = longDate3;
+</script>
 
-const date4 = new Date();
-const options4 = {year: 'numeric', month: 'long', day: 'numeric' };
-const longDate4 = date4.toLocaleDateString('en-US', options4);
-document.getElementById("ot4").textContent = longDate4;
 
-        </script>
     </body>
 </html>

@@ -146,7 +146,7 @@ if (date4 === "") {
 
 
 let submit_date_day;
-const date5 = sheet.getRange(i, 2).getValue();
+const date5 = sheet.getRange(i, 69).getValue();
 if (date5 === "") {
   submit_date_day = "";
 } else {
