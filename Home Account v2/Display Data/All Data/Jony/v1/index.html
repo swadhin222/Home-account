@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
+  <style>
+.hm{
+        background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
+        color: white;
+    }
+  </style>
+</head>
+<body class="bg-light pt-1 pb-4">
+    <div class="hm container text-center pt-2 pb-2 shadow rounded">
+      <h2>Home Account v2</h2>
+      <p class="">All Data show - Jony</p>
+  </div>
+<div class="container mt-3">
+   <table id="example" class="table table-striped table-bordered" style="width:100%" >
+    <?var tableData = getSheetData();?>
+    <?for(var i = 0; i < tableData.length; i++) { ?>
+      <?if(i == 0) { ?>
+        <thead>
+        <tr>
+        <?for(var j = 0; j < tableData[i].length; j++) { ?>
+        <th><?= tableData[i][j] ?></th>
+        <? } ?>
+        </tr>
+        </thead>
+      <? } else { ?>
+        <tr>
+        <?for(var j = 0; j < tableData[i].length; j++) { ?>
+        <td><?= tableData[i][j] ?></td>
+        <? } ?>
+        </tr>
+      <? } ?>
+    <? } ?>
+    </table>
+</div>
+
+    <script>
+    $(document).ready(function () {
+    $('#example').DataTable();
+});
+</script>
+  </body>
+</html>

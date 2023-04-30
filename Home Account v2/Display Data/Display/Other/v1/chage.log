@@ -1,0 +1,58 @@
+------------
+22 April 2023  (--07--)
+1:50 AM 
+    + add total qty
+    + add print date
+    + some bug fix
+-------------
+18 April 2023  (--06--)
+8:27 PM
+    Code.gs
+        + fix title update.
+        + fix submit date.
+    index.html
+        + fix open url link update.
+
+-------------
+18 April 2023 (--05--)
+2:34 PM To 7:25
+    index.html
+        + add Home account text click, then Bill id section hide.
+        + add Open link Button.(click to new tab open)
+        + add bill input, add placeholder text
+        - remove refresh Button.
+        
+        
+-------------
+18 April 2023 (--04--)
+11:54 AM to 2:08 PM
+    code.gs
+        + Bug fix all date formate
+-------------
+18 April 2023 (--03--)
+1:13 AM to 1:22 AM
+    code.gs
+        - Remove var bill_date_day. 
+        - Remove var submitting_date_day.
+        + fix bill date
+        + fix submitting date
+
+    code gs html code
+        - Remove bill date day
+        - remove submitting date day
+-------------
+18 April 2023 (--02--)
+1:07 AM
+code.gs
+    + fix all date function
+
+-------------
+17 April 2023 (--01--)
+11:35 pm to 12:10 AM
+Code gs html code 
+    + add all data config to data
+
+code.gs
+    + add all data val add.
+    
+---------------------
